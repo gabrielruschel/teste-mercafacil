@@ -9,6 +9,8 @@ Todas as dependências do Node utilizadas no projeto podem ser encontradas no pa
 
 Para disponibilizar os bancos de dados utilizei o ambiente Docker, com os arquivos de configuração fornecidos inicialmente.
 
+Para executar a aplicação, basta executar o comando npm start no diretório raiz
+
 A API possui duas rotas principais:
 
 * POST /autentica: Realiza a autenticação de um usuário, onde é necessário fornecer um JSON com os campos "username" e "password"
