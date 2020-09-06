@@ -1,0 +1,30 @@
+# Implementação do teste para o Processo Seletivo Backend Mercafácil
+
+Autor: Gabriel Ruschel Castanhel
+
+Para a implementação da API utilizei o NodeJS (versão atual 14.9.0)
+
+Todas as dependências do Node utilizadas no projeto podem ser encontradas no package.json.
+É necessário executar o comando npm install para instalar as dependências necessárias.
+
+Para disponibilizar os bancos de dados utilizei o ambiente Docker, com os arquivos de configuração fornecidos inicialmente.
+
+A API possui duas rotas principais:
+
+* POST /autentica: Realiza a autenticação de um usuário, onde é necessário fornecer um JSON com os campos "username" e "password"
+
+Essa rota realiza uma simulação de uma autenticação no banco de dados, que presume dois usuários cadastrados:
+- O usuário "macapa" senha "macapa123"
+- O usuário "varejao" senha "varejao123"
+
+Caso a autenticação tenha sucesso, a rota responde com o Token JWT que será utilizado para cadastrar os contatos.
+
+* POST /cadastra: Realiza o cadastro de contatos, através de um JSON no formato fornecido (um vetor "contacts" contendo
+objetos que contém nome e telefone), onde também é necessário fornecer o Token do usuário no Authorization header
+
+Essa rota é a responsável por realizar o cadastro de contatos na base respectiva de cada cliente. É necessário fornecer
+no Authorization header o Token JWT obitdo na autenticação, e no body o JSON com o vetor "contacts" contendo os contatos
+a serem inseridos na base. Com a verificação do Token é obtido o usuário que realizou a requisição, e o cadastro é realizado
+na base de acordo com as especificações cliente, na respectiva base.
+
+Em config/dev.json se encontra o arquivo de configuração contendo os endereços e portas do server e das bases utilizadas

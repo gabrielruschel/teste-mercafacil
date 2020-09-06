@@ -1,0 +1,9 @@
+{
+    "ServerHost": "127.0.0.1",
+    "Port": 8080,
+    "MySQLPort": 3306,
+    "PostgresPort": 5432,
+    "DBUser": "admin",
+    "DBPassword": "admin",
+    "DB": "admin"
+}
